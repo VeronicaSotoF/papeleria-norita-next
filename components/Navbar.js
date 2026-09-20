@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FiSearch, FiShoppingCart } from "react-icons/fi";
+import { FiSearch, FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
 
 const enlaces = [
   { href: "/", texto: "Inicio" },
@@ -14,11 +15,12 @@ const enlaces = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [menuAbierto, setMenuAbierto] = useState(false);
 
   return (
     <header className="navbar">
       <div className="navbar-content">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" onClick={() => setMenuAbierto(false)}>
           <div className="brand-icon">
             <Image
               src="/logo.svg"
@@ -35,13 +37,17 @@ export default function Navbar() {
           </div>
         </Link>
 
-        <nav className="nav-links">
+        <nav
+          id="menu-principal"
+          className={`nav-links ${menuAbierto ? "open" : ""}`}
+        >
           {enlaces.map((enlace) => (
             <Link
               key={enlace.href}
               href={enlace.href}
               className={pathname === enlace.href ? "active" : ""}
               aria-current={pathname === enlace.href ? "page" : undefined}
+              onClick={() => setMenuAbierto(false)}
             >
               {enlace.texto}
             </Link>
@@ -60,6 +66,17 @@ export default function Navbar() {
           >
             <FiShoppingCart />
             <span className="cart-number">0</span>
+          </button>
+
+          <button
+            className="icon-button menu-toggle"
+            aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuAbierto}
+            aria-controls="menu-principal"
+            type="button"
+            onClick={() => setMenuAbierto(!menuAbierto)}
+          >
+            {menuAbierto ? <FiX /> : <FiMenu />}
           </button>
         </div>
       </div>
