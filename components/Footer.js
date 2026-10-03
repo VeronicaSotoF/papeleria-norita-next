@@ -18,15 +18,30 @@ export default function Footer() {
           <h3>Síguenos</h3>
 
           <div className="social-icons">
-            <a href="#" aria-label="Facebook">
+            <a
+              href="https://www.facebook.com"
+              aria-label="Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebookF />
             </a>
 
-            <a href="#" aria-label="Instagram">
+            <a
+              href="https://www.instagram.com"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaInstagram />
             </a>
 
-            <a href="#" aria-label="WhatsApp">
+            <a
+              href="https://wa.me/523421234567"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaWhatsapp />
             </a>
           </div>
