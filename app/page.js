@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FiArrowRight } from "react-icons/fi";
+import Slider from "../components/Slider";
 
 const productos = [
   {
@@ -25,9 +26,7 @@ export default function Home() {
     <main>
       {/* HERO */}
       <section className="hero">
-        <div className="hero-image placeholder-image">
-          <span>Imagen principal</span>
-        </div>
+        <Slider />
 
         <div className="hero-content">
           <span className="hero-label">PAPELERÍA NORITA</span>

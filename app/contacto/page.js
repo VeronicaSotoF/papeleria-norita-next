@@ -1,5 +1,6 @@
 import { FiTool } from "react-icons/fi";
 import Faq from "../../components/Faq";
+import StarRating from "../../components/StarRating";
 
 export const metadata = {
   title: "Contacto",
@@ -21,6 +22,12 @@ export default function Contacto() {
         </div>
 
         <Faq />
+      </section>
+
+      <section className="rating-section">
+        <h2>¿Qué te pareció la atención de Norita?</h2>
+        <p>Tu opinión nos ayuda a mejorar. Selecciona de 1 a 5 estrellas.</p>
+        <StarRating id="atencion-norita" grande />
       </section>
     </main>
   );

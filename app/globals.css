@@ -938,3 +938,210 @@ button {
   font-size: 14px;
   line-height: 1.7;
 }
+
+/* =========================
+   SLIDER - FLECHAS
+========================= */
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text);
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.carousel-arrow-left {
+  left: 12px;
+}
+
+.carousel-arrow-right {
+  right: 12px;
+}
+
+/* =========================
+   VALORACIÓN CON ESTRELLAS
+========================= */
+
+.rating {
+  margin-top: 6px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rating-star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #c3c8cc;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: transform 0.15s ease;
+}
+
+.rating-star.filled {
+  color: var(--accent);
+}
+
+.rating-star:not(:disabled):hover {
+  transform: scale(1.2);
+}
+
+.rating-star:disabled {
+  cursor: default;
+}
+
+.rating-text {
+  color: var(--text-light);
+  font-size: 12px;
+}
+
+/* =========================
+   SLIDER - BASE
+========================= */
+
+.carousel-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-image img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+}
+
+.carousel-dot.active {
+  background: var(--primary);
+}
+
+@media (min-width: 700px) {
+  .carousel-image img {
+    height: 430px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .carousel-image img {
+    height: 450px;
+  }
+}
+
+/* =========================
+   VALORACIÓN - SECCIÓN CONTACTO
+========================= */
+
+.rating-section {
+  width: min(800px, 92%);
+  margin: 0 auto 60px;
+  padding: 28px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background-soft);
+}
+
+.rating-section h2 {
+  margin-bottom: 6px;
+
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.rating-section p {
+  margin-bottom: 16px;
+
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.rating-large {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-large .rating-star {
+  font-size: 32px;
+}
+
+.rating-large .rating-stars {
+  gap: 6px;
+}
+
+.rating-thanks {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+}
