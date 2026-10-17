@@ -1,4 +1,5 @@
 import { FiTarget, FiEye } from "react-icons/fi";
+import VideoEmbed from "../../components/VideoEmbed";
 
 export const metadata = {
   title: "Nosotros",
@@ -8,8 +9,15 @@ export default function Nosotros() {
   return (
     <main>
       <section className="about">
-        <div className="about-image placeholder-image">
-          <span>Imagen del negocio</span>
+        <div className="about-video">
+          <VideoEmbed
+            id="mxEou10KHrA"
+            titulo="Haul de útiles escolares para el ciclo escolar 2026-2027"
+          />
+          <p className="video-caption">
+            Video de apoyo: ¡así se prepara el regreso a clases! Material de un
+            tercero, con fines ilustrativos.
+          </p>
         </div>
 
         <div className="about-content">

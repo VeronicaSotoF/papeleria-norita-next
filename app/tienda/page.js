@@ -1,4 +1,5 @@
-import { FiTool } from "react-icons/fi";
+import ProductGallery from "../../components/ProductGallery";
+import { productos } from "../data/productos";
 
 export const metadata = {
   title: "Tienda",
@@ -7,10 +8,13 @@ export const metadata = {
 export default function Tienda() {
   return (
     <main>
-      <section className="under-construction">
-        <FiTool />
-        <h1>Página de Tienda en construcción</h1>
-        <p>Muy pronto podrás ver aquí todos nuestros productos.</p>
+      <section className="featured-products">
+        <div className="section-heading">
+          <span>NUESTROS PRODUCTOS</span>
+          <h1>Tienda</h1>
+        </div>
+
+        <ProductGallery productos={productos} />
       </section>
     </main>
   );

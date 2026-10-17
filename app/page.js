@@ -1,25 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FiArrowRight } from "react-icons/fi";
 import Slider from "../components/Slider";
+import StarRating from "../components/StarRating";
+import { productos } from "./data/productos";
 
-const productos = [
-  {
-    nombre: "Cuaderno profesional",
-    precio: "$45.00",
-  },
-  {
-    nombre: "Pluma de gel",
-    precio: "$18.00",
-  },
-  {
-    nombre: "Colores de madera",
-    precio: "$65.00",
-  },
-  {
-    nombre: "Carpeta tamaño carta",
-    precio: "$32.00",
-  },
-];
+const destacados = productos.slice(0, 4);
 
 export default function Home() {
   return (
@@ -57,15 +43,30 @@ export default function Home() {
         </div>
 
         <div className="products-grid">
-          {productos.map((producto) => (
-            <article className="product-card" key={producto.nombre}>
-              <div className="product-image placeholder-image">
-                <span>Imagen</span>
-              </div>
+          {destacados.map((producto) => (
+            <article className="product-card" key={producto.id}>
+              <Link
+                href="/tienda"
+                className="product-image product-image-button"
+                aria-label={`Ver ${producto.nombre} en la tienda`}
+              >
+                <Image
+                  src={producto.imagen}
+                  alt={producto.alt}
+                  width={800}
+                  height={800}
+                />
+              </Link>
 
               <div className="product-info">
                 <h3>{producto.nombre}</h3>
-                <p>{producto.precio}</p>
+                <p>
+                  {producto.precio.toLocaleString("es-MX", {
+                    style: "currency",
+                    currency: "MXN",
+                  })}
+                </p>
+                <StarRating id={`producto-${producto.id}`} soloLectura />
               </div>
             </article>
           ))}
