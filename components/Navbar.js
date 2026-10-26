@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FiSearch, FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
+import { useCart } from "./CartContext";
 
 const enlaces = [
   { href: "/", texto: "Inicio" },
@@ -16,6 +17,7 @@ const enlaces = [
 export default function Navbar() {
   const pathname = usePathname();
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const { totalArticulos, abrirCarrito } = useCart();
 
   return (
     <header className="navbar">
@@ -61,11 +63,14 @@ export default function Navbar() {
 
           <button
             className="icon-button cart-button"
-            aria-label="Carrito"
+            aria-label={`Carrito, ${totalArticulos} artículos`}
             type="button"
+            onClick={abrirCarrito}
           >
             <FiShoppingCart />
-            <span className="cart-number">0</span>
+            <span key={totalArticulos} className="cart-number cart-bump">
+              {totalArticulos}
+            </span>
           </button>
 
           <button

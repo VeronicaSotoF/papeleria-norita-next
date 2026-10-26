@@ -4,6 +4,7 @@ import { FiArrowRight } from "react-icons/fi";
 import Slider from "../components/Slider";
 import StarRating from "../components/StarRating";
 import { productos } from "./data/productos";
+import LottieAnimation from "../components/LottieAnimation";
 
 const destacados = productos.slice(0, 4);
 
@@ -32,6 +33,29 @@ export default function Home() {
             Ir a la tienda
             <FiArrowRight />
           </Link>
+        </div>
+      </section>
+
+      {/* BIENVENIDA CON ANIMACIÓN */}
+      <section className="welcome-banner">
+        <LottieAnimation
+          src="/animations/notebook.json"
+          ancho={240}
+          descripcion="Animación de un cuaderno de Papelería Norita"
+        />
+
+        <div className="welcome-text">
+          <span>BIENVENIDO</span>
+          <h2>Tu papelería de confianza en Sayula</h2>
+          <p>
+            Desde un lápiz hasta todo el material para el regreso a clases.
+            Elige tus productos en la tienda, agrégalos al carrito y apártalos
+            por WhatsApp.
+          </p>
+          <small className="welcome-credit">
+            Animación: Free Paper notebook writing animation Animation, por MD
+            Abdur Rahim, vía LottieFiles. Adaptada para Papelería Norita.
+          </small>
         </div>
       </section>
 

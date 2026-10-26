@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FiX, FiChevronLeft, FiChevronRight, FiZoomIn } from "react-icons/fi";
 import StarRating from "./StarRating";
+import AddToCartButton from "./AddToCartButton";
 
 function formatoPrecio(valor) {
   return valor.toLocaleString("es-MX", {
@@ -70,6 +71,7 @@ export default function ProductGallery({ productos }) {
               <h3>{producto.nombre}</h3>
               <p>{formatoPrecio(producto.precio)}</p>
               <StarRating id={`producto-${producto.id}`} />
+              <AddToCartButton producto={producto} />
             </div>
           </article>
         ))}
@@ -121,6 +123,7 @@ export default function ProductGallery({ productos }) {
               <small>
                 {indice + 1} de {total}
               </small>
+              <AddToCartButton producto={actual} />
             </figcaption>
           </figure>
 
