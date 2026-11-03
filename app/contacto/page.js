@@ -1,4 +1,4 @@
-import { FiTool } from "react-icons/fi";
+import ContactForm from "../../components/ContactForm";
 import Faq from "../../components/Faq";
 import StarRating from "../../components/StarRating";
 
@@ -9,11 +9,7 @@ export const metadata = {
 export default function Contacto() {
   return (
     <main>
-      <section className="under-construction">
-        <FiTool />
-        <h1>Página de Contacto en construcción</h1>
-        <p>Muy pronto podrás encontrar aquí nuestros medios de contacto.</p>
-      </section>
+      <ContactForm />
 
       <section className="faq-section">
         <div className="section-heading">

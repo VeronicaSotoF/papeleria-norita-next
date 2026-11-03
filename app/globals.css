@@ -1749,3 +1749,155 @@ a.product-image-button {
     animation: none !important;
   }
 }
+
+/* FORMULARIO DE CONTACTO */
+
+.Form {
+  text-align: center;
+}
+
+.contact-form-section {
+  padding: 60px 20px;
+  background-color: #f5f7f8;
+}
+
+.contact-form-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  background-color: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-image {
+  min-height: 650px;
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact-form-content {
+  padding: 40px;
+}
+
+.contact-form-content h1 {
+  color: #245a75;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.contact-form-content > p {
+  color: #666666;
+  margin-bottom: 25px;
+}
+
+.contact-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 17px;
+}
+
+.contact-field label {
+  color: #245a75;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-field input,
+.contact-field select,
+.contact-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d5dfe4;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+  border-color: #245a75;
+  box-shadow: 0 0 0 2px rgba(36, 90, 117, 0.12);
+}
+
+.contact-field textarea {
+  resize: vertical;
+}
+
+.contact-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.contact-consent input {
+  margin-top: 3px;
+  accent-color: #245a75;
+}
+
+.contact-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #245a75;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-submit:hover {
+  background-color: #1b465b;
+}
+
+.contact-success {
+  color: #245a75;
+  background-color: #eaf4f8;
+  padding: 12px;
+  border-radius: 7px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 768px) {
+  .contact-form-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image {
+    min-height: 250px;
+    height: 250px;
+  }
+
+  .contact-form-content {
+    padding: 25px 20px;
+  }
+
+  .contact-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
