@@ -1,4 +1,5 @@
 import ContactForm from "../../components/ContactForm";
+import LocationMap from "../../components/LocationMap";
 import Faq from "../../components/Faq";
 import StarRating from "../../components/StarRating";
 
@@ -10,6 +11,8 @@ export default function Contacto() {
   return (
     <main>
       <ContactForm />
+
+      <LocationMap />
 
       <section className="faq-section">
         <div className="section-heading">
